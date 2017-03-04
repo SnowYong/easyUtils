@@ -9,11 +9,11 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.text.NumberFormat;
 
 import static com.mcs.easyutils.EasyLogMod.error;
 import static com.mcs.easyutils.EasyParseMod.getFileName;
 
+@SuppressWarnings("unused")
 public class EasyFileMod
 {
     private static String TAG = "EasyFileMod";
@@ -80,36 +80,4 @@ public class EasyFileMod
         }
     }
 
-    private static long getFileFolderSize(File dir) {
-        long size = 0;
-        if (dir.isDirectory()) {
-            for (File file : dir.listFiles()) {
-                if (file.isFile()) {
-                    size += file.length();
-                } else
-                    size += getFileFolderSize(file);
-            }
-        } else if (dir.isFile()) {
-            size += dir.length();
-        }
-        return size;
-    }
-    public static String LongSize(long fileSize) {
-        double sizeMB = (double) fileSize / 1024 / 1024;
-        String s = " MB";
-        if (sizeMB < 1) {
-            sizeMB = (double) fileSize / 1024;
-            s = " KB";
-        }
-        String datasize = NumberFormat.getInstance().format(sizeMB);
-        String datasize2 = datasize.replaceAll("[^\\d.,]", "");
-        if (datasize2.length() >= 4){
-            datasize2 = datasize2.substring(0, 4) + "";
-        }
-        return datasize2 + s;
-    }
-
-    public static String getSize(File file){
-        return LongSize(getFileFolderSize(file));
-    }
 }

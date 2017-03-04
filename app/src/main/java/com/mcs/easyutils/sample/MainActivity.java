@@ -6,7 +6,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -16,7 +15,6 @@ public class MainActivity extends AppCompatActivity {
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
     }
 
     @Override
@@ -31,10 +29,8 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         if (id == R.id.action_play) {
-
             return true;
         } else if (id == R.id.action_stop) {
-
             return true;
         }
 

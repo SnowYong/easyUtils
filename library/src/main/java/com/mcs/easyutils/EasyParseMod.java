@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.text.NumberFormat;
 import java.util.Arrays;
 
 import static com.mcs.easyutils.EasyLogMod.error;
@@ -130,6 +131,40 @@ public class EasyParseMod
     public static String getFileName(File file){
         String path = file.getAbsolutePath();
         return path.substring(path.lastIndexOf("/") + 1);
+    }
+
+
+    private static long getFileFolderSize(File dir) {
+        long size = 0;
+        if (dir.isDirectory()) {
+            for (File file : dir.listFiles()) {
+                if (file.isFile()) {
+                    size += file.length();
+                } else
+                    size += getFileFolderSize(file);
+            }
+        } else if (dir.isFile()) {
+            size += dir.length();
+        }
+        return size;
+    }
+    public static String LongSize(long fileSize) {
+        double sizeMB = (double) fileSize / 1024 / 1024;
+        String s = " MB";
+        if (sizeMB < 1) {
+            sizeMB = (double) fileSize / 1024;
+            s = " KB";
+        }
+        String datasize = NumberFormat.getInstance().format(sizeMB);
+        String datasize2 = datasize.replaceAll("[^\\d.,]", "");
+        if (datasize2.length() >= 4){
+            datasize2 = datasize2.substring(0, 4) + "";
+        }
+        return datasize2 + s;
+    }
+
+    public static String getSize(File file){
+        return LongSize(getFileFolderSize(file));
     }
 
 }
