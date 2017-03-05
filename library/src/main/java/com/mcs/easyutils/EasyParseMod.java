@@ -29,7 +29,7 @@ public class EasyParseMod
         try{
             return Integer.parseInt(string);
         }catch (NumberFormatException e){
-            warn("conversion:", "could not parse value");
+            warn(TAG, "could not parse value");
             return 0;
         }
     }
@@ -41,20 +41,20 @@ public class EasyParseMod
         try {
             return parseLong(string);
         }catch (NumberFormatException e){
-            warn("conversion:", "could not parse value");
+            warn(TAG, "could not parse value");
             return null;
         }
     }
 
-    public static String stringToFloat(Float floatValue){
+    public static String floatToString(Float floatValue){
         return Float.toString(floatValue);
     }
-    public static Float floatToString(String string){
+    public static Float stringToFloat(String string){
         try{
             return Float.parseFloat(string);
         }
         catch (NumberFormatException e){
-            warn("conversion:", "could not parse value");
+            warn(TAG, "could not parse value");
             return null;
         }
     }
@@ -71,7 +71,7 @@ public class EasyParseMod
         try {
             return parseLong(intToString(number));
         }catch (NumberFormatException e){
-            warn("conversion:", "could not parse value");
+            warn(TAG, "could not parse value");
             return null;
         }
     }

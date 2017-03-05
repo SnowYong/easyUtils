@@ -46,65 +46,65 @@ public class EasyPrefsMod
 
     //get stuff!
     //Strings
-    public final String getString(String getStringName) {
+    public final String getString(String key) {
         SharedPreferences getPrefs = prefs();
-        return getPrefs.getString(getStringName, "");
+        return getPrefs.getString(key, "");
     }
-    public final String getString(String Prefs, int mode, String getStringName) {
+    public final String getString(String Prefs, int mode, String key) {
         SharedPreferences getPrefs = prefs(Prefs, mode);
-        return getPrefs.getString(getStringName, "");
+        return getPrefs.getString(key, "");
     }
 
     //booleans
-    public final boolean getBoolean(String getBooleanName, boolean myBoolean) {
+    public final boolean getBoolean(String key) {
         SharedPreferences getPrefs = prefs();
-        return getPrefs.getBoolean(getBooleanName, myBoolean);
+        return getPrefs.getBoolean(key, false);
     }
-    public final boolean getBoolean(String Prefs, int mode, String getBooleanName, boolean myBoolean) {
+    public final boolean getBoolean(String Prefs, int mode, String key) {
         SharedPreferences getPrefs = prefs(Prefs, mode);
-        return getPrefs.getBoolean(getBooleanName, myBoolean);
+        return getPrefs.getBoolean(key, false);
     }
 
     //StringSet<String>
     @TargetApi(HONEYCOMB)
-    public final Set<String> getStringSet(String getStringSetName, Set<String> myStringSet) {
+    public final Set<String> getStringSet(String key) {
         SharedPreferences getPrefs = prefs();
-        return getPrefs.getStringSet(getStringSetName, myStringSet);
+        return getPrefs.getStringSet(key, null);
     }
     @TargetApi(HONEYCOMB)
-    public final Set<String> getStringSet(String Prefs, int mode, String getStringSetName, Set<String> myStringSet) {
+    public final Set<String> getStringSet(String Prefs, int mode, String key) {
         SharedPreferences getPrefs = prefs(Prefs, mode);
-        return getPrefs.getStringSet(getStringSetName, myStringSet);
+        return getPrefs.getStringSet(key, null);
     }
 
     //int
-    public final int getInt(String getIntName, int myInt) {
+    public final int getInt(String key) {
         SharedPreferences getPrefs = prefs();
-        return getPrefs.getInt(getIntName, myInt);
+        return getPrefs.getInt(key, 0);
     }
-    public final int getInt(String Prefs, int mode, String getIntName, int myInt) {
+    public final int getInt(String Prefs, int mode, String key) {
         SharedPreferences getPrefs = prefs(Prefs, mode);
-        return getPrefs.getInt(getIntName, myInt);
+        return getPrefs.getInt(key, 0);
     }
 
     //float
-    public final Float getFloat(String getFloatName, Float myFloat) {
+    public final Float getFloat(String key) {
         SharedPreferences getPrefs = prefs();
-        return getPrefs.getFloat(getFloatName, myFloat);
+        return getPrefs.getFloat(key, 0.0f);
     }
-    public final Float getFloat(String Prefs, int mode, String getFloatName, int myFloat) {
+    public final Float getFloat(String Prefs, int mode, String key) {
         SharedPreferences getPrefs = prefs(Prefs, mode);
-        return getPrefs.getFloat(getFloatName, myFloat);
+        return getPrefs.getFloat(key, 0.0f);
     }
 
     //long
-    public final Long getLong(String getFloatName, Long myFloat) {
+    public final Long getLong(String key) {
         SharedPreferences getPrefs = prefs();
-        return getPrefs.getLong(getFloatName, myFloat);
+        return getPrefs.getLong(key, 0L);
     }
-    public final Long getLong(String Prefs, int mode, String getLongName, Long myLong) {
+    public final Long getLong(String Prefs, int mode, String key) {
         SharedPreferences getPrefs = prefs(Prefs, mode);
-        return getPrefs.getLong(getLongName, myLong);
+        return getPrefs.getLong(key, 0L);
     }
 
     //all
@@ -192,14 +192,14 @@ public class EasyPrefsMod
         custom1.apply();
     }
 
-    public final void clearValue(String valueName){
+    public final void clearValue(String key){
         SharedPreferences.Editor default0 = editor();
-        default0.remove(valueName);
+        default0.remove(key);
         default0.apply();
     }
-    public final void clearValue(String Prefs, int mode, String valueName){
+    public final void clearValue(String Prefs, int mode, String key){
         SharedPreferences.Editor custom1 = editor(Prefs, mode);
-        custom1.remove(valueName);
+        custom1.remove(key);
         custom1.apply();
     }
 

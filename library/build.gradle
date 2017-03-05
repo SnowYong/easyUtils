@@ -14,7 +14,7 @@ ext {
     gitUrl = 'https://github.com/Xstar97/easyUtils.git'
     githubRepository= 'Xstar97/easyUtils'
 
-    libraryVersion = '1.0'
+    libraryVersion = '1.0.2'
 
     developerId = 'xstar97'
     developerName = 'Xstar97'
@@ -32,8 +32,8 @@ android {
     defaultConfig {
         minSdkVersion 9
         targetSdkVersion 25
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "1.0.2"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
