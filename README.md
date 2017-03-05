@@ -130,8 +130,125 @@ Do fileIO sh!t
  Change your app's default language easily!
  
      EasyLocaleMod easyLocaleMod = new EasyLocaleMod(context);
-     easyLocaleMod.getLanguage();//returns "en"
+     easyLocaleMod.getLanguageCode();//returns "en"
      easyLocaleMod.defaultLocale();
-     easyLocaleMod.setLanguage("default language");
+     easyLocaleMod.setLanguage("english");
      easyLocaleMod.getLanguage();
-     easyLocaleMod.setLocale("language");
+     easyLocaleMod.setLocale("en");
+
+# EasyLogMod
+Easily log your app's sh!t
+
+    EasyLogMod.verbose("TAG", "verbose");
+    EasyLogMod.debug("TAG", "debug");
+    EasyLogMod.info("TAG", "info");
+    EasyLogMod.warn("TAG", "warn");
+    EasyLogMod.error("TAG", "error");
+    
+# EasyNetworkMod
+Easily get network info in your app!(dont forget to add your internet permissions!)
+
+    EasyNetworkMod easyNetworkMod = new EasyNetworkMod(context);
+    easyNetworkMod.isWifiEnabled();//boolean to return if wifi is enabled....
+    easyNetworkMod.isBluEnabled();//boolean to return if bluetooth is enabled....
+    easyNetworkMod.isOnline();//boolean to return if connected to the internet....
+    
+# EasyParseMod
+Easily parse your data....
+
+    EasyParseMod.isEmpty(String string);//returns boolean
+    EasyParseMod.intToString(int number);//returns string
+    EasyParseMod.stringToInt(String string);//returns int
+    EasyParseMod.longToString(Long long);//returns string
+    EasyParseMod.stringToLong(String string);//returns long
+    EasyParseMod.stringToFloat(String string);//returns float
+    EasyParseMod.floatToString(Float flot);//returns string
+    EasyParseMod.longToInt(Long long);//returns int
+    EasyParseMod.intToLong(int log);//returns long
+    EasyParseMod.containsDigit(String string);//returns boolean
+    EasyParseMod.arrayToString(String[] array);//returns string
+    EasyParseMod.lastIndexOf("string", "i");//returns substring
+    EasyParseMod.lastIndexOf("string", 4);//returns substring
+    EasyParseMod.fileToString(File file);//returns string
+    EasyParseMod.getFileName(File file);//returns string
+    EasyParseMod.LongSize(Long fileSize);//returns string
+    EasyParseMod.getSize(File file);//returns string
+    
+# EasyPermissionMod
+Easily check if permissions were granted(does not ask user!)
+
+    EasyPermissionMod easyPermissionMod = new EasyPermissionMod(context);
+    easyPermissionMod.hasPermission(String permission);
+    
+# EasyPrefsMod
+Easily create & use the sharedpreference
+
+    EasyPrefsMod easyPrefsMod = new EasyPrefsMod(context);
+    //get values
+    easyPrefsMod.getString(String key);//returns string
+    easyPrefsMod.getString(String Prefs, int mode, String key);//returns string
+    easyPrefsMod.getBoolean(String key);//returns boolean
+    easyPrefsMod.getBoolean(String Prefs, int mode, String key);//returns boolean
+    easyPrefsMod.getStringSet(String key);//returns Set<String>
+    easyPrefsMod.getStringSet(String Prefs, int mode, String key);//returns Set<String>
+    easyPrefsMod.getInt(String key);//returns int
+    easyPrefsMod.getInt(String Prefs, int mode, String key);//returns int
+    easyPrefsMod.getFloat(String key);//returns float
+    easyPrefsMod.getFloat(String Prefs, int mode, String key);//returns float
+    easyPrefsMod.getLong(String key);//returns long
+    easyPrefsMod.getLong(String Prefs, int mode, String key);//returns long
+    easyPrefsMod.getAll();//returns map<String,?>
+    easyPrefsMod.getAll(String Prefs, int mode);//returns map<String,?>
+    //put values
+    easyPrefsMod.put(String key, String value);
+    easyPrefsMod.put(String Prefs, int mode, String key, String value);
+    easyPrefsMod.put(String key, boolean value);
+    easyPrefsMod.put(String Prefs, int mode, String key, boolean value);
+    easyPrefsMod.put(String key, Set<String> value);
+    easyPrefsMod.put(String Prefs, int mode, String key, Set<String> value);
+    easyPrefsMod.put(String key, int value);
+    easyPrefsMod.put(String Prefs, int mode, String key, int value);
+    easyPrefsMod.put(String key, float value);
+    easyPrefsMod.put(String Prefs, int mode, String key, float value);
+    easyPrefsMod.put(String key, long value);
+    easyPrefsMod.put(String Prefs, int mode, String key, long value);
+    easyPrefsMod.clearValue(String key);
+    easyPrefsMod.clearValue(String Prefs, int mode, String key);
+    easyPrefsMod.clearAll();
+    easyPrefsMod.clearAll(String Prefs, int mode);
+    
+# EasySocialMod
+Easily launch "any" social app with your profile, page, etc...
+
+    PPCV = PAGE/PROFILE/COMMUNITY/VIDEO
+    
+    FACEBOOK_APP = "com.facebook.katana";
+    GOOGLE_PLUS_APP = "com.google.android.apps.plus";
+    TWITTER_APP = "com.twitter.android";
+    YOUTUBE_APP = "com.google.android.youtube";
+    
+    SOCIAL_PAGE = "page";
+    SOCIAL_PROFILE = "profile";
+    SOCIAL_COMMUNITY = "community";
+    SOCIAL_VIDEO = "video";
+    
+    EasySocialModListener easySocialModListener = new EasySocialModListener() {
+            @Override
+            public void onSuccess() {
+                
+            }
+
+            @Override
+            public void onFail(boolean isConnected, boolean isAppInstalled) {
+
+            }
+        };
+    
+    EasySocialMod easySocialMod = new EasySocialMod(context, easySocialModListener);//listener can bu null
+    
+    easySocialMod.openSocialApp(String appID, String PPCV, String uri);
+    easySocialMod.openSocialApp(String appID, String uri);
+    easySocialMod.rateApp();
+    easySocialMod.rateApp(String appID);
+    
+#     
