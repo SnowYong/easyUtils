@@ -24,21 +24,17 @@ Return boolean if the device's host file contains the specific name of the ad co
                 return ads = areAdsDisabled;
             }
         };
-        EasyAdsModTask easyAdsModTask = new EasyAdsModTask(context, adCo, easyAdsModListener);
+        EasyAdsModTask easyAdsModTask = new EasyAdsModTask(context, "admob", easyAdsModListener);
         easyAdsModTask.execute();
 
 # EasyAppMod
 get app info of any app!
 
     EasyAppMod easyAppMod = new EasyAppMod(context);
-    //Returns boolean of the app is installed & enabled
-    easyAppMod.ifAppIsInstalled("com.example.app");
-    //returns app version; ex: "1.0.0"
-    easyAppMod.appVersionName("com.example.app");
-    //returns app version; ex: 1
-    easyAppMod.appVersionCode("com.example.app");
-    //returns your own app's package name; ex: "com.example.app"
-    easyAppMod.appPackageName();
+    easyAppMod.ifAppIsInstalled("com.example.app");//Returns boolean of the app is installed & enabled
+    easyAppMod.appVersionName("com.example.app");//returns app version; ex: "1.0.0"
+    easyAppMod.appVersionCode("com.example.app");//returns app version; ex: 1
+    easyAppMod.appPackageName();//returns your own app's package name; ex: "com.example.app"
     
 # EasyAudioMod
 play audio files from assets, raws, or any directory on the device storage(this is normally is only used for notification sounds...but)
@@ -71,39 +67,39 @@ play audio files from assets, raws, or any directory on the device storage(this 
     easyAudioMod.stopSound();
     
 # EasyDeviceMod
-Hate remembering ABI's? so do I!
-      
-    String: 
+Easily get device info
+
+    //Hate remembering ABI's? so do I! 
     X86 returns "x86"
     ARM returns "armeabi-v7a"
     ARM64 returns "arm64-v8a"
     
-    DEVICE_SDK_INT();//returns int
-    DEVICE_BASE_OS();//TargetApi = 23; returns string
-    DEVICE_SDK_DEP();//deprecation; returns string
-    DEVICE_SUPPORTED_ABIS();//TargetApi = 21; returns string
-    DEVICE_SUPPORTED_64_BIT_ABIS();//TargetApi = 21; returns string
-    DEVICE_SUPPORTED_32_BIT_ABIS();//TargetApi = 21; returns string
-    DEVICE_CPU_ABI2();//deprecation; returns string
-    DEVICE_CPU_ABI();//deprecation; returns string
-    DEVICE_MANUFACTURER();//returns string
-    DEVICE_MODEL();//returns string
-    DEVICE_BOARD();//returns string
-    DEVICE_BOOTLOADER();//returns string
-    DEVICE_BRAND();//returns string
-    DEVICE_DEVICE();//returns string
-    DEVICE_DISPLAY();//returns string
-    DEVICE_FINGERPRINT();//returns string
-    DEVICE_RADIOVERSION();//TargetApi = 14; returns string
-    DEVICE_RADIO_DEP();//deprecation; returns string
-    DEVICE_HARDWARE();//returns string
-    DEVICE_HOST();//returns string
-    DEVICE_ID();//returns string
-    DEVICE_PRODUCT();//returns string
-    DEVICE_TAGS();//returns string
-    DEVICE_TYPE();//returns string
-    DEVICE_USER();//returns string
-    DEVICE_TIME();//returns string
+    EasyDeviceMod.DEVICE_SDK_INT();//returns int
+    EasyDeviceMod.DEVICE_BASE_OS();//TargetApi = 23; returns string
+    EasyDeviceMod.DEVICE_SDK_DEP();//deprecation; returns string
+    EasyDeviceMod.DEVICE_SUPPORTED_ABIS();//TargetApi = 21; returns string
+    EasyDeviceMod.DEVICE_SUPPORTED_64_BIT_ABIS();//TargetApi = 21; returns string
+    EasyDeviceMod.DEVICE_SUPPORTED_32_BIT_ABIS();//TargetApi = 21; returns string
+    EasyDeviceMod.DEVICE_CPU_ABI2();//deprecation; returns string
+    EasyDeviceMod.DEVICE_CPU_ABI();//deprecation; returns string
+    EasyDeviceMod.DEVICE_MANUFACTURER();//returns string
+    EasyDeviceMod.DEVICE_MODEL();//returns string
+    EasyDeviceMod.DEVICE_BOARD();//returns string
+    EasyDeviceMod.DEVICE_BOOTLOADER();//returns string
+    EasyDeviceMod.DEVICE_BRAND();//returns string
+    EasyDeviceMod.DEVICE_DEVICE();//returns string
+    EasyDeviceMod.DEVICE_DISPLAY();//returns string
+    EasyDeviceMod.DEVICE_FINGERPRINT();//returns string
+    EasyDeviceMod.DEVICE_RADIOVERSION();//TargetApi = 14; returns string
+    EasyDeviceMod.DEVICE_RADIO_DEP();//deprecation; returns string
+    EasyDeviceMod.DEVICE_HARDWARE();//returns string
+    EasyDeviceMod.DEVICE_HOST();//returns string
+    EasyDeviceMod.DEVICE_ID();//returns string
+    EasyDeviceMod.DEVICE_PRODUCT();//returns string
+    EasyDeviceMod.DEVICE_TAGS();//returns string
+    EasyDeviceMod.DEVICE_TYPE();//returns string
+    EasyDeviceMod.DEVICE_USER();//returns string
+    EasyDeviceMod.DEVICE_TIME();//returns string
     
 # EasyDrawableMod
 Get an app's drawable the easy way!
