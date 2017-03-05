@@ -31,7 +31,7 @@ public class EasyNetworkMod
     }
 
     @RequiresPermission(Manifest.permission.BLUETOOTH)
-    public static boolean isBbluEnabled() {
+    public static boolean isBluEnabled() {
         boolean blu = false;
 
         BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
